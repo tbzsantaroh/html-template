@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />	<!-- IE互換モード拒否 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	<!-- モバイル用サイズ調整 -->
+	<title>イベントCG</title>
+	<link href="../css/evs.css" rel="stylesheet">
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" charset="utf-8"></script>	<!-- jQuery -->
+	<script src="../js/jquery.collapse.js"></script>	<!-- 折りたたみ -->
+
+<script type="text/javascript">
+$(function(){
+
+$(".window_mes").collapse({
+	show: function(){
+        this.animate({
+            opacity: 'toggle', 
+            height: 'toggle'
+        }, 300);
+    },
+    hide : function() {
+        this.animate({
+            opacity: 'toggle', 
+            height: 'toggle'
+        }, 300);
+    }
+});
+
+});
+</script>
+	<!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]-->	<!-- IE8以下HTML5対応 -->
+	<!--[if IE ]><link href="../css/ie-hack.css" rel="stylesheet" type="text/css" /><![endif]-->	<!-- IE用振り分け -->
+	<!--[if (gte IE 6)&(lte IE 8)]><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js"></script><script type="text/javascript" src="../js/selectivizr-min.js"></script><![endif]-->	<!-- IE用CSS3セレクタ対応 -->
+</head>
+<body id="page_evs">
+
+<article>
+<section class="window_cg flash" id="ev1cg">	<!-- 画像の番号指定 -->
+</section>
+
+
+
+
+
+</article>
+</body>
+</html>

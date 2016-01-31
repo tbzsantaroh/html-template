@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+
+
+/* webfont
+----------------------------- */
+.song_text h4 {
+	font-family: 'Denk One', 'Meiryo', sans-serif;
+}
+.btn {
+	font-family: 'Denk One', 'Meiryo', sans-serif;
+	font-weight: bold;
+}
+
+
+
+
+.box:first-child {
+	margin: 5em 0 3em;
+}
+
+
+
+/* 主題歌のとこ
+----------------------------- */
+#song {	/* タイトルと動画のスキマ消し */
+	margin: .5em 0 0 0em;
+}
+
+.song_text {
+	text-align: center;
+	padding: .1em 0;
+	color: #fff;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIHN0b3AtY29sb3I9IiNmYzlmOTciIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIwIi8+PHN0b3Agc3RvcC1jb2xvcj0iI2Y1MDY2MyIgc3RvcC1vcGFjaXR5PSIxIiBvZmZzZXQ9IjEiLz48L2xpbmVhckdyYWRpZW50PjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjdnNnZykiIC8+PC9zdmc+);
+	background-image: -webkit-gradient(linear, 0% 0%, 100% 100%,color-stop(0, rgb(252, 159, 151)),color-stop(1, rgb(245, 6, 99)));
+	background-image: -webkit-repeating-linear-gradient(top left,rgb(252, 159, 151) 0%,rgb(245, 6, 99) 100%);
+	background-image: repeating-linear-gradient(to bottom right,rgb(252, 159, 151) 0%,rgb(245, 6, 99) 100%);
+	background-image: -ms-repeating-linear-gradient(top left,rgb(252, 159, 151) 0%,rgb(245, 6, 99) 100%);
+}
+.song_text h4 {
+	font-size: 3rem;	/* 曲名の文字サイズ */
+}
+.song_text a:link, .song_text a:visited {
+	color: #fff;
+}
+
+table a:link, table a:visited {
+	color: #444;
+}
+
+table {
+	margin: 1em 0;
+	border: 1px dashed #ccc;
+}
+
+
+/* スキマ消し
+----------------------------- */
+.embed-responsive, .song_text {
+	margin: 0 -1em;
+}
+
+
+
+/* ついったー素材
+----------------------------- */
+#twitter_parts p {	/* 説明テキスト */
+	margin: 0 1em 2em;
+}
+#twitter_parts img {
+	margin: auto;
+
+	-moz-transition: all .1s ease-out;
+	-webkit-transition: all .1s ease-out;
+	-ms-transition: all .1s ease-out;
+	transition: all .1s ease-out;
+}
+#twitter_parts img:hover {
+	-moz-transform: scale3d(1.01,1.01,1);
+	-ms-transform: scale3d(1.01,1.01,1);
+	-webkit-transform: scale3d(1.01,1.01,1);
+	transform: scale3d(0.9,0.9,1);
+}
+
+#twitter_parts h4 {
+	margin: 1em 5%;
+	text-align: center;
+	font-size: 3rem;
+	padding: 0 0 .2em;
+	border-bottom: 1px solid rgba(0,0,0,0.3);
+
+}

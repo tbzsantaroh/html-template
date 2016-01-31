@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+
+
+/* webfont
+----------------------------- */
+
+
+
+/* .row大杉でネガティブマージンズレるのでとりあえず横幅通常化
+----------------------------- */
+@media (max-width: 767px) {
+	.container > .row > [class*='col-'] {
+	    padding-right:15px;
+	    padding-left:15px;
+	}
+}
+
+
+.box {
+	margin: 5em 0 3em;
+	padding: 1em 0 0;
+}
+
+
+
+
+.box .popup img {
+	margin: 0em auto;
+
+	-moz-transition: all .2s ease-out;
+	-webkit-transition: all .2s ease-out;
+	-ms-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'saturate\' values=\'0.5\' /></filter></svg>#grayscale");
+	filter: gray;
+	-webkit-filter: grayscale(50%);
+	z-index: 9;
+	position: relative;
+}
+
+.box .popup img:hover {
+	filter: none;
+	-webkit-filter: grayscale(0%);
+	z-ind: 100;
+}
+
+
+/* スキマなくサムネ敷き詰め用bootstrap修正
+----------------------------- */
+.col-md-4 {
+	padding: 0;
+}
+.sum_area {
+	padding-left: 15px;
+	padding-right: 15px;
+}

@@ -1,0 +1,250 @@
+@charset "utf-8";
+
+
+
+
+
+
+/* webfont
+----------------------------- */
+.yyc-day {	/* カウントダウン数字 */
+	font-family: 'Averia Gruesa Libre', 'Meiryo', sans-serif;
+}
+
+
+
+
+/* トップ画像
+----------------------------- */
+.topimage {
+	border: 1em solid #111;
+	border-top: none;
+	border-bottom: .2em solid #111;
+	margin: auto;
+}
+
+
+
+.main_bg {	/* トップ画像から下のメインコンテンツ背景 */
+	background: #777;
+
+	background: url("../img/base/kenja.png") fixed, linear-gradient(to bottom, #caf1ff, #fffbce);
+	background: none;
+}
+
+
+
+
+.box {
+	margin: 1em 0;
+}
+
+
+
+
+/* .row大杉でネガティブマージンズレるのでとりあえず横幅通常化
+----------------------------- */
+@media (max-width: 767px) {
+	.container > .row > [class*='col-'] {
+	    padding-right:15px;
+	    padding-left:15px;
+	}
+}
+
+
+
+
+
+/* ゲーム紹介ボイス
+----------------------------- */
+.countdown {
+	margin-bottom: -300px;
+	margin-top: 40%;
+	z-index: 5;
+	position: relative;
+}
+@media (max-width: 1250px) {
+	.countdown {
+		margin-left: -5em;
+	}
+}
+.voice_mobile {
+	text-align: center;
+	display: block;
+}
+.voice_mobile img {
+	margin: 1em auto;
+	border: 4px solid #fff;
+	border-radius: 15px;
+}
+
+/* カウントダウンのとこ
+----------------------------- */
+.countdown2 {
+	background: #F0F0F0;
+	border-radius: 3px;
+	border: 1px solid #999;
+	box-shadow: 5px 8px 0 #222;
+	margin-bottom: -300px;
+	margin-top: 40%;
+	z-index: 105;
+	position: relative;
+	text-align: center;
+	padding: .5em 0 0;
+	color: #333;
+	transform: rotate(5deg);
+
+	-ms-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+}
+.countdown2:hover {
+	transform: rotate(2deg);
+}
+
+.voice_popup:hover {	/* マウスホバー時に下線なし */
+	text-decoration: none;
+}
+
+.countdown2 p {	/* 発売まであとのとこ */
+	font-weight: bold;
+}
+.yyc-day {	/* 数字のとこ */
+	font-size: 10rem;
+	line-height: .7;
+	color: #222;
+	text-shadow: 0 0 5px #990000;
+}
+.yyc-day-text {	/* 日のとこ */
+	font-weight: bold;
+}
+
+.yyc-hou, .yyc-min, .yyc-sec {	/* カウントダウンスクリプト日付以外は非表示 */
+	display: none;
+}
+
+.hatsubaibi {
+	font-size: 4rem;
+}
+
+/* モバイル時表示
+----------------------------- */
+@media (max-width: 960px) {
+	.countdown2 {
+		box-shadow: 5px 8px 0 #222;
+		margin-bottom: 0;
+		margin-top: 0;
+		transform: rotate(0deg);
+		box-shadow: none;
+	}
+	.countdown2:hover {
+		transform: rotate(0deg);
+	}
+	.countdown2 p {	/* 発売まであとのとこ */
+		line-height: .5;
+	}
+	.countdown2 img {
+		text-align: center;
+		margin: auto;
+	}
+	.yyc-day {	/* 数字のとこ */
+		font-size: 5rem;
+		line-height: .7;
+	}
+}
+
+
+
+/* トップイメージ
+----------------------------- */
+.topimage_bg {	/* トップイメージ用縦幅確保 */
+	height: 900px;
+}
+
+.topimage_anime {	/* トップイメージのアニメーションパーツ */
+	margin-top: -555px;
+	padding-bottom: 50px;
+}
+@media (max-width: 990px) {
+	.topimage_anime {
+		margin-top: 0;
+		padding-bottom: 0;
+	}
+}
+.topimage_anime img {
+	margin: auto;
+}
+
+.wh_bg {	/* 背景隠し白色 */
+	background: rgba(255, 255, 255, 0);
+}
+
+
+
+/* 通販ショップリストのとこ
+----------------------------- */
+.shoplist {
+	text-align: center;
+	padding: 0;
+}
+.shoplist li {
+	display: inline-block;
+}
+
+
+
+/* 中段告知ドデカバナー
+----------------------------- */
+.middle_banner {
+	list-style: none;
+	margin: .5em 0 0;
+	padding: 0;
+}
+.middle_banner img {
+	margin: .5em auto;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.4);
+
+	-moz-transition: all .1s ease-out;
+	-webkit-transition: all .1s ease-out;
+	-ms-transition: all .1s ease-out;
+	transition: all .1s ease-out;
+}
+.middle_banner img:hover {
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+
+	-ms-transform: rotateZ(5deg);
+	transform: rotateZ(5deg);
+}
+.middle_banner img.noradius {	/* バナーの角を丸めない */
+	border-radius: 0;
+}
+
+
+
+
+/* 更新履歴
+----------------------------- */
+#history {
+	margin: 0 0 1.5em;
+	height: 284px;
+	overflow: auto;
+
+	border-top: 1px solid #999;
+	padding-top: .5em;
+}
+#history dt {
+	margin-top: 1em;
+	padding: .2em 0;
+}
+#history dt:before {
+	display: block;
+	content: " ";
+	border-top: 1px solid rgba(100,100,100,0.2);
+	margin: 0 1em;
+	padding: .5em 0;
+}
+#history dt:first-child:before {
+	border: none;
+	margin: 0;
+	padding: 0;
+}

@@ -1,0 +1,218 @@
+@charset "utf-8";
+
+
+
+/* webfont
+----------------------------- */
+
+
+
+
+
+.box:first-child {
+	margin: 5em 0 0;
+}
+
+.box {
+	border: none;
+	background: #eee;
+}
+.panel-group .panel+.panel {
+    margin-top: 0;
+}
+
+
+
+/* 内部コンテンツの横padding解除
+----------------------------- */
+.panel-heading {
+	padding: 0;
+	border-bottom: 1px solid transparent;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+h4 img {
+	border: 1px solid #ccc;
+	text-align: center;
+	border-radius: 10px;
+	box-shadow: 0 0 15px #000;
+
+	-moz-transition: all .3s ease-out;
+	-webkit-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+}
+h4 img:hover {
+	box-shadow: 0 1px 5px #000;
+
+	transform: translateY(2px);
+}
+
+
+/* 角丸解除
+----------------------------- */
+.box {
+	border-radius: 0;
+	overflow: hidden;	/* バナーのはみ出しカット */
+}
+.panel-group .panel {
+	border-radius: 0;
+}
+
+
+
+
+
+/* カウントダウンボイス
+----------------------------- */
+.countdown_space {
+	text-align: center;
+}
+.countdown_space a {
+	margin: .5em .2em;
+	padding: .5em 2em .5em 1em;
+}
+
+
+
+
+
+
+/* スペシャルトーク
+----------------------------- */
+.media-left, .media>.pull-left {
+    padding-right: 0;
+}
+.media-right, .media>.pull-right {
+    padding-left: 0;
+}
+
+/* 会話部分
+----------------------------- */
+.media {	/* 会話ウィンド */
+	background: url("../img/special/talkbg.jpg");
+	box-shadow: 0 1px 5px #ccc;
+
+	padding: 0.5em;
+	font-size: 1.7rem;
+	color: #666;
+}
+@media (max-width: 767px) {
+	.media {
+		font-size: 1.5rem;
+	}
+}
+.media a {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.media-object {	/* 顔アイコン */
+	border: 1px solid #CCCC99;
+	border-radius: 10px;
+	margin: 0 0.5em;
+}
+.media h4 {	/* なまえ */
+	padding: 0.5em 0 0;
+	color: #444;
+	font-weight: bold;
+	border-bottom: 1px dashed #CCCC99;
+}
+.media p {	/* メッセージ本文 */
+	margin: 0.5em;
+}
+.media em {
+	color: #33CC99;
+	font-weight: bold;
+}
+
+.img_set {	/* 画像用枠 */
+	text-align: center;
+	background: none;
+	box-shadow: 0 0 0 #ccc;
+}
+.img_set img {
+	border: 1px solid #888;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #999;
+	margin: 5px;
+}
+
+
+
+.talk_image {
+	text-align: center;
+	margin: .5em 0;
+}
+.talk_image img {
+	margin: auto;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+
+
+
+/* バナーキャンペーン
+----------------------------- */
+h5 {
+	font-size: 2rem;
+	letter-spacing: 1.5em;
+	padding-bottom: .5em;
+	border-bottom: 1px solid #aaa;
+}
+
+#bn600x120, #bn450x90, #bn200x200, #bn200x40, #bn150x600, #bn430x780 {	/* バナーセンタリング */
+	text-align: center;
+}
+#bn600x120 h3, #bn450x90 h3, #bn200x200 h3, #bn200x40 h3, #bn150x600 h3, #bn430x780 h3 {	/* サイズ別タイトル */
+	font-size: 2rem;
+	font-weight: normal;
+}
+
+
+.bn_block {	/* バナー1コあたりのブロック */
+	display: inline-block;
+
+}
+.bn_block img {
+	text-align: center;
+	margin: auto;
+}
+
+pre {	/* コードエリア */
+	overflow: auto;
+	margin: 0 auto 1em;
+	line-height: 1;
+}
+
+/* 各バナーサイズに合わせてコードエリア幅調整 */
+#bn600x120 pre {
+	max-width: 600px;
+	height: 70px;
+
+}
+#bn450x90 pre {
+	max-width: 450px;
+	height: 50px;
+
+}
+#bn200x200 pre {
+	max-width: 200px;
+	height: 100px;
+
+}
+#bn200x40 pre {
+	max-width: 200px;
+	height: 40px;
+
+}
+#bn150x600 pre {
+	max-width: 150px;
+	height: 150px;
+}
+#bn430x780 pre {
+	max-width: 780px;
+	height: 50px;
+}

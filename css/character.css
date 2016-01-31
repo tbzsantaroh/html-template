@@ -1,0 +1,389 @@
+@charset "utf-8";
+
+
+
+
+/* webfont
+----------------------------- */
+.name_mobile {
+  font-family: 'Alegreya Sans SC', 'Meiryo', sans-serif;
+}
+
+
+/* モバイル時.rowの横マージン解除
+----------------------------- */
+/*
+@media (max-width: 767px) {
+	.container > .row > [class*='col-'] {
+	    padding-right:0;
+	    padding-left:0;
+	}
+}
+*/
+#bottom_area .col-md-6 {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+
+
+
+/* モバイル時にだけ出る名前
+----------------------------- */
+.name_mobile {
+  color: #ccc;
+  text-align: center;
+  padding: 1em 0;  line-height: 1;
+}
+#acrylicblue .name_mobile {
+  background: #00baff;
+  border-top: 1px solid #00baff;
+  border-bottom: 1px solid #00baff;
+}
+#acrylicred .name_mobile {
+  background: #ff0078;
+  border-top: 1px solid #ff0078;
+  border-bottom: 1px solid #ff0078;
+}
+#genzou .name_mobile {
+  background: #5a00ff;
+  border-top: 1px solid #5a00ff;
+  border-bottom: 1px solid #5a00ff;
+}
+.name_mobile_main {
+  font-size: 4rem;
+}
+.name_mobile_ruby {
+  font-size: 1rem;
+  letter-spacing: 1em;
+  font-weight: bold;
+}
+
+
+/* 立ち絵切り替えスライダー
+----------------------------- */
+.tachie_space {
+	position: relative;
+}
+.carousel-control.right, .carousel-control.left {	/* スライダー左右切り替えボタンの背景グラデ消し */
+	background-image: none;
+}
+
+.carousel-indicators li {    /* スライダーの下のボタン */
+    border-radius: 0;
+    box-shadow: 1px 0 0 #666,
+                -1px 0 0 #666,
+                0 1px 0 #666,
+                0 -1px 0 #666;
+
+	-ms-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+
+  box-shadow: 1px 0 0 #ccc, -1px 0 0 #ccc, 0 1px 0 #ccc, 0 -1px 0 #ccc;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  background: transparent;
+}
+.carousel-indicators .active {
+    background-color: transparent;
+    border-radius: 3px;
+    background: #666;
+}
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {    /* スライダー左右ボタン */
+    font-size: 60px;
+}
+.carousel-control {
+    width: 35%; /* 左右の切り替えボタンの押せる範囲と位置調整 */
+
+    color: #777;  /* 左右の切り替えボタン */
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+.carousel-control:focus, .carousel-control:hover {
+    color: #666;
+    text-shadow: 0 1px 2px #fff;
+    filter: alpha(opacity=90);
+    outline: 0;
+    opacity: .9;
+}
+
+
+
+
+/* 立ち絵切り替えアニメ
+----------------------------- */
+.carousel-inner > .item.next,
+.carousel-inner > .item.active.right {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+/*  -webkit-transform: rotateY(180deg);  */
+  opacity: 0;
+  transition: opacity .3s linear;
+}
+.carousel-inner > .item.prev,
+.carousel-inner > .item.active.left {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+/*  -webkit-transform: rotateY(-180deg);  */
+  opacity: 0;
+  transition: opacity .3s linear;
+}
+
+
+/* 立ち絵切り替えインジケータに画像使う修正
+----------------------------- */
+.carousel-indicators {  /* インジケータの画像が改行してしまうので横幅アップ */
+  width: 80%;
+  margin-left: -40%;
+}
+.carousel-indicators li {
+    text-indent: 0;
+}
+.carousel-indicators .active, .carousel-indicators li {
+    width: auto;
+    height: auto;
+}
+
+/* インジケータ画像アニメーション
+----------------------------- */
+.carousel-indicators li:hover {
+  border: 2px solid #fff;
+}
+.carousel-indicators .active {
+  border: 2px solid #fff;
+}
+
+
+
+/* モバイル時立ち絵まっすぐ
+----------------------------- */
+@media (max-width: 960px) {
+    .item img {
+/*      transform: rotate(15deg);  */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 右側キャラ説明コンテンツ
+----------------------------- */
+.char_text {
+  margin-left: -26%;
+}
+@media (max-width: 960px) {
+    .char_text {
+    	margin-left: 0;
+    }
+}
+
+
+
+
+
+
+/* セリフ
+----------------------------- */
+.serifu_space {
+
+  margin-right: -2em;
+  background: #fff;
+
+	margin-bottom: 20%;
+}
+#genzou .serifu_space {
+  margin-top: 50%;
+}
+@media (max-width: 960px) {
+  #genzou .serifu_space {
+    margin: 0;
+  }
+}
+.serifu_space img {
+  padding: 2em 4em 2em 3em;
+  margin: auto;
+}
+
+
+
+/* 名前
+----------------------------- */
+.name_space {
+	text-align: center;
+	margin: 1em auto;
+}
+#genzou .name_space {
+  margin: 60% 0 0 3%;
+}
+p.cv_name {  /* 声優名 */
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #222;
+
+  text-shadow: 2px 2px 0 #baff00;
+}
+@media (max-width: 960px) {
+  .name_space {
+  	margin: 0 auto;
+  }
+  #acrylicblue .name_space {
+    background: #00baff;
+  }
+  #acrylicred .name_space {
+    background: #ff0078;
+  }
+  #genzou .name_space {
+    background: #5a00ff;
+    margin: 0;
+  }
+  .name_space img {
+    margin: auto;
+  }
+  p.cv_name {
+    margin-top: .5em;
+    text-shadow: none;
+    color: #fff;
+  }
+}
+
+
+/* キャラ説明
+----------------------------- */
+.box {
+	line-height: 1.7;
+  padding: 3% 4%;
+	color: #fff;
+	border-radius: 5px;
+  border: none;
+  box-shadow: none;
+
+  background: rgba(0, 0, 0, 0.8);
+}
+#genzou .box {
+  margin-top: 20%;
+}
+@media (max-width: 960px) {
+	.box, #genzou .box {
+		margin: 0;
+    border-radius: 0;
+	}
+}
+
+
+
+
+/* サンプルボイスボタン
+----------------------------- */
+.voice a {
+  text-align: center;
+  background: #FF3399;
+  margin: 0;
+  border-radius: 3px;
+  box-shadow: 0 3px 0 #fff;
+  padding: .5em 0 .05em;
+  font-weight: bold;
+  letter-spacing: .2em;
+  display: block;
+  color: #fff;
+  text-shadow: 0 0 5px #333;
+
+  -moz-transition: all .3s ease-out;
+	-webkit-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+}
+@media (min-width: 1200px) {	/* 上マージン位置調整 */
+  .voice a {
+    margin: 2.5em 0 0;
+  }
+}
+.voice a:hover {
+  text-decoration: none;
+  transform: translateY(2px);
+  color: #eee;
+  box-shadow: 0 0 0 #fff;
+  text-shadow: none;
+}
+.voice_ruby {
+  font-size: .6rem;
+  line-height: .3;
+}
+
+
+
+
+/* 背景
+----------------------------- */
+#acrylicblue {
+  background: url('../img/character/blue-bg.jpg') no-repeat left center;
+  background-size: cover;
+  overflow: hidden;
+  margin: 6em 0 2em;
+  box-shadow: 8px 8px 0 #00baff;
+}
+#acrylicred {
+  background: url('../img/character/red-bg.jpg') no-repeat left center;
+  background-size: cover;
+  overflow: hidden;
+  margin: 2em 0;
+  box-shadow: 8px 8px 0 #ff0078;
+}
+#genzou {
+  background: url('../img/character/genzou-bg.jpg') no-repeat left top;
+  background-size: cover;
+  overflow: hidden;
+  margin: 2em 0;
+  box-shadow: 8px 8px 0 #5a00ff;
+}
+@media (max-width: 960px) {
+  #acrylicblue {
+    margin: 4em 0;
+    box-shadow: 0 8px 0 #00baff;
+  }
+  #acrylicred {
+    margin: 4em 0;
+    box-shadow: 0 8px 0 #ff0078;
+  }
+  #genzou {
+    background: url('../img/character/genzou-bg.jpg') repeat right -200px;
+    background-size: auto;
+    margin: 4em 0;
+    box-shadow: 0 8px 0 #5a00ff;
+  }
+}
+
+
+/* セリフと名前角度修正
+----------------------------- */
+.name_space, .serifu_space {
+  transform: rotate(-15deg);
+  margin-bottom: 15%;
+}
+#genzou .name_space, #genzou .serifu_space {
+  transform: rotate(0deg);
+  margin-bottom: 15%;
+}
+@media (max-width: 960px) {
+  .name_space, .serifu_space {
+    transform: rotate(0deg);
+    margin-bottom: 0;
+    padding: 1em 0;
+  }
+  #genzou .name_space, #genzou .serifu_space {
+    margin-bottom: 0;
+  }
+}
