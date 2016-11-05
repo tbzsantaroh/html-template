@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+
+
+/* webfont
+----------------------------- */
+#story p {
+	font-family: "Yu Gothic", 'Meiryo', sans-serif;
+	font-weight: bold;
+}
+
+
+
+#story {
+	margin: 5em 0 3em;
+	padding: 1em 1em 2em;
+}
+
+
+
+
+
+
+#story p {
+	line-height: 2.3;
+	font-size: 1.5rem;
+}

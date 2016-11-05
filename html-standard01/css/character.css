@@ -1,0 +1,474 @@
+@charset "utf-8";
+
+
+
+
+/* webfont
+----------------------------- */
+.voice, .setsumei {
+	font-family: "Yu Mincho", serif, sans-serif;
+}
+
+@font-face {
+    font-family: 'M+ 1c light';
+    src: url('../fonts/mplus-1c-light-sub.eot');
+    src: url('../fonts/mplus-1c-light-sub.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/mplus-1c-light-sub.woff') format('woff'),
+    url('../fonts/mplus-1c-light-sub.ttf') format('truetype');
+}
+.serifu_mobile {
+    font-family: 'M+ 1c light';
+}
+.nav-tabs li:first-letter {
+	font-family: "Yu Mincho", serif, sans-serif;
+	font-weight: normal;
+}
+
+
+/* モバイル時.rowの横マージン解除
+----------------------------- */
+/*
+@media (max-width: 767px) {
+	.container > .row > [class*='col-'] {
+	    padding-right:0;
+	    padding-left:0;
+	}
+}
+*/
+
+
+
+
+
+
+/* セリフ画像
+----------------------------- */
+.serifu {
+	max-height: 768px;	/* 立ち絵と同じ高さ */
+	position: relative;
+	z-index: 5;
+}
+@media (max-width: 1200px) {
+	.serifu img {
+		max-height: 695px;	/* 立ち絵がレスポンシブで高さ変わるので再調整 */
+	}
+}
+
+/* モバイル用セリフテキスト
+----------------------------- */
+.serifu_mobile {
+	font-size: 1.6rem;
+	background: #fff;
+	border-radius: 5px;
+	padding: .5em;
+	text-align: center;
+}
+#rina .serifu_mobile {
+	color: #FF0066;
+	border-top: 2px solid #FF0066;
+	border-bottom: 2px solid #FF0066;
+}
+#yumi .serifu_mobile {
+	color: #33CCCC;
+	border-top: 2px solid #33CCCC;
+	border-bottom: 2px solid #33CCCC;
+}
+#takuya .serifu_mobile, #takuya_dark .serifu_mobile {
+	color: #555;
+	border-top: 2px solid #333;
+	border-bottom: 2px solid #333;
+	margin-top: 10em;
+}
+
+
+/* 立ち絵切り替えスライダー
+----------------------------- */
+.tachie_space {
+	position: relative;
+  z-index: 4;
+}
+.tachie_space:after {	/* 立ち絵下のグラデ線 */
+	content:"";
+	display: block;
+	height:1px;
+	background-image: -webkit-linear-gradient(left,rgba(103, 103, 103, 0) 0%,rgb(50, 50, 50) 20%,rgb(50, 50, 50) 80%,rgba(103, 103, 103, 0) 100%);
+    background-image: linear-gradient(to right,rgba(103, 103, 103, 0) 0%,rgb(50, 50, 50) 20%,rgb(50, 50, 50) 80%,rgba(103, 103, 103, 0) 100%);
+    background-image: -ms-linear-gradient(left,rgba(103, 103, 103, 0) 0%,rgb(50, 50, 50) 20%,rgb(50, 50, 50) 80%,rgba(103, 103, 103, 0) 100%);
+}
+.carousel-control.right, .carousel-control.left {	/* スライダー左右切り替えボタンの背景グラデ消し */
+	background-image: none;
+}
+
+.carousel-indicators li {    /* スライダーの下のボタン */
+    border-radius: 0;
+    box-shadow: 1px 0 0 #666,
+                -1px 0 0 #666,
+                0 1px 0 #666,
+                0 -1px 0 #666;
+
+	-ms-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+
+  box-shadow: 1px 0 0 #ccc, -1px 0 0 #ccc, 0 1px 0 #ccc, 0 -1px 0 #ccc;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: transparent;
+}
+.carousel-indicators .active {
+    background-color: transparent;
+    border-radius: 3px;
+    background: #666;
+}
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {    /* スライダー左右ボタン */
+    font-size: 60px;
+}
+.carousel-control {
+    width: 35%; /* 左右の切り替えボタンの押せる範囲と位置調整 */
+
+    color: #777;  /* 左右の切り替えボタン */
+    text-shadow: 0 1px 1px rgba(0,0,0,.6);
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+.carousel-control:focus, .carousel-control:hover {
+    color: #666;
+    text-shadow: 0 1px 1px #fff;
+    filter: alpha(opacity=90);
+    outline: 0;
+    opacity: .9;
+}
+
+/* モバイル時立ち絵調整
+----------------------------- */
+@media (max-width: 960px) {
+    .tachie_space img {
+    	margin: auto;
+    }
+}
+
+
+/* 立ち絵切り替えアニメ
+----------------------------- */
+.carousel-inner > .item.next,
+.carousel-inner > .item.active.right {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+/*  -webkit-transform: rotateY(180deg);  */
+  opacity: 0;
+  transition: opacity .3s linear;
+}
+.carousel-inner > .item.prev,
+.carousel-inner > .item.active.left {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+/*  -webkit-transform: rotateY(-180deg);  */
+  opacity: 0;
+  transition: opacity .3s linear;
+}
+
+
+/* 立ち絵切り替えインジケータに画像使う修正
+----------------------------- */
+.carousel-indicators {  /* インジケータの画像が改行してしまうので横幅アップ */
+  width: 80%;
+  margin-left: -40%;
+}
+.carousel-indicators li {
+    text-indent: 0;
+}
+.carousel-indicators .active, .carousel-indicators li {
+    width: auto;
+    height: auto;
+}
+
+/* インジケータ画像アニメーション
+----------------------------- */
+.carousel-indicators li:hover {
+  border: 1px solid #fff;
+}
+.carousel-indicators .active {
+  border: 2px solid #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 右側キャラ説明コンテンツ
+----------------------------- */
+.char_text {
+	margin: 0 -28% 0 -15%;
+}
+
+@media (max-width: 990px) {
+  .char_text {	margin: 0;	}
+}
+
+
+
+
+/* テキスト
+----------------------------- */
+.setsumei {
+  color: #fff;
+	line-height: 1.5;
+	font-size: 1.6rem;
+/*	font-weight: bold;	*/
+	text-shadow: 1px 1px 2px #000,
+							-1px 1px 2px #000,
+							1px -1px 2px #000,
+							-1px -1px 2px #000,
+							3px 3px 2px #000;
+
+  margin: 15% 0 0;
+
+	position: relative;
+	z-index: 5;
+}
+@media (max-width: 1200px) {
+	.setsumei {
+		margin: 5% 0 0;
+	}
+}
+
+
+
+
+
+/* サンプルボイス
+----------------------------- */
+.voice {
+  margin: 5% 0 10%;
+  -moz-transition: all .3s ease-out;
+  -webkit-transition: all .3s ease-out;
+  -ms-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+@media (max-width: 990px) {
+  .voice {  text-align: center; }
+}
+.voice:hover {
+  transform: translateY(1px);
+}
+.voice p {
+  padding: .5em 1.5em;
+  background: rgba(20, 0, 0, 0.9);
+
+  box-shadow: 0 0 20px rgba(40, 0, 0, 0.8);
+  text-shadow: 0 0 5px red;
+  font-weight: bold;
+  color:#FFCCCC;
+  font-size: 1.8rem;
+  display: inline;
+
+  -moz-transition: all .5s ease-out;
+	-webkit-transition: all .5s ease-out;
+	-ms-transition: all .5s ease-out;
+	transition: all .5s ease-out;
+}
+.voice p:hover {
+  background: rgba(80, 0, 0, 0.8);
+  border: 1px solid rgba(120, 100, 100, 0.7);
+  box-shadow: 0 0 10px rgba(110, 0, 0, 0.8), 0 0 50px rgba(0, 0, 0, 0.8) inset;
+  color: #eee;
+
+}
+.popup:hover {
+  text-decoration: none;
+}
+
+.nivo-lightbox-content iframe {
+    box-shadow: 0 0 25px #000;
+    border-radius: 5px;
+}
+
+
+/* 名前
+----------------------------- */
+.name_space {
+	text-align: center;
+	margin: 5em -10% 0 -50%;
+	position: relative;
+	z-index: 0;
+
+}
+@media (max-width: 1200px) {
+	.name_space {
+		margin: 1em -10% 0 -50%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/* 背景
+----------------------------- */
+#rina, #rina_dark {
+  overflow: hidden;
+/*  margin: 6em 0 2em;	*/	/* タブ切り替えのためにマージン解除 */
+
+	border: 1px solid #111;
+	border-radius: 5px;
+
+  box-shadow: 0 0 30px rgba(0,0,0,0.9);
+
+	background: url("../img/character/bg1-rina1.jpg") no-repeat center center;
+	background-size: cover;
+  /* windows環境で無理やりテキストアンチエイリアス */
+	transform: rotate(0.028deg);
+	-ms-transform: rotate(0.028deg);
+	-moz-transform: rotate(0.028deg);
+	-webkit-transform: rotate(0.028deg);
+}
+#rina img, #rina_dark img {	/* 画像にはアンチエイリアスの回転かけない */
+	transform: rotate(-0.028deg);
+	-ms-transform: rotate(-0.028deg);
+	-moz-transform: rotate(-0.028deg);
+	-webkit-transform: rotate(-0.028deg);
+}
+#rina_dark {
+	background: url("../img/character/bg1-rina2.jpg") no-repeat center center;
+	background-size: cover;
+}
+
+
+#yumi, #yumi_dark {
+  overflow: hidden;
+/*  margin: 6em 0 2em;	*/	/* タブ切り替えのためにマージン解除 */
+
+	border: 1px solid #111;
+	border-radius: 5px;
+
+  box-shadow: 0 0 30px rgba(0,0,0,0.9);
+
+	background: url("../img/character/bg1-yumi1.jpg") no-repeat center center;
+	background-size: cover;
+  /* windows環境で無理やりテキストアンチエイリアス */
+	transform: rotate(0.028deg);
+	-ms-transform: rotate(0.028deg);
+	-moz-transform: rotate(0.028deg);
+	-webkit-transform: rotate(0.028deg);
+}
+#yumi img, #yumi_dark img {	/* 画像にはアンチエイリアスの回転かけない */
+	transform: rotate(-0.028deg);
+	-ms-transform: rotate(-0.028deg);
+	-moz-transform: rotate(-0.028deg);
+	-webkit-transform: rotate(-0.028deg);
+}
+#yumi_dark {
+	background: url("../img/character/bg1-yumi2.jpg") no-repeat center center;
+	background-size: cover;
+}
+
+
+
+
+
+#takuya, #takuya_dark {
+  overflow: hidden;
+/*  margin: 6em 0 2em;	*/	/* タブ切り替えのためにマージン解除 */
+
+	border: 1px solid #111;
+	border-radius: 5px;
+
+  box-shadow: 0 0 30px rgba(0,0,0,0.9);
+
+	background: url("../img/character/bg1-takuyasan1.jpg") no-repeat center center;
+	background-size: cover;
+  /* windows環境で無理やりテキストアンチエイリアス */
+	transform: rotate(0.028deg);
+	-ms-transform: rotate(0.028deg);
+	-moz-transform: rotate(0.028deg);
+	-webkit-transform: rotate(0.028deg);
+}
+#takuya img, #takuya_dark img {	/* 画像にはアンチエイリアスの回転かけない */
+	transform: rotate(-0.028deg);
+	-ms-transform: rotate(-0.028deg);
+	-moz-transform: rotate(-0.028deg);
+	-webkit-transform: rotate(-0.028deg);
+}
+#takuya_dark {
+	background: url("../img/character/bg1-takuyasan2.jpg") no-repeat center center;
+	background-size: cover;
+}
+
+
+@media (min-width: 1400px) {
+	#rina, #rina_dark, #yumi, #yumi_dark, #takuya, #takuya_dark {  margin: 0em -10% 2em;	}
+}
+
+
+
+
+/* 切り替えタブbootstrap修正
+----------------------------- */
+.nav-tabs {
+    border-bottom: none;
+}
+.nav-tabs>li {
+	float: right;
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 0 0 3px 3px;
+}
+
+/* 切り替えタブ
+----------------------------- */
+.nav-tabs {
+	margin-top: 4em;
+	font-weight: bold;
+}
+
+.nav-tabs li {
+	-ms-transition: all .2s ease-out;
+	transition: all .2s ease-out;
+	transform: translateY(10px);
+}
+.nav-tabs li:first-letter {
+	font-size: 4rem;
+	font-weight: normal;
+	color: #FF3333;
+}
+.nav-tabs li:hover {
+	transform: translateY(5px);
+
+}
+.nav-tabs li.active {
+	transform: translateY(5px);
+}
+
+.nav-tabs li a {	/* 非アクティブタブ */
+  border: 1px solid #fff;
+  border-bottom-color: transparent;
+	padding: 0 1em 0;
+
+	background: #222;
+  color: #fff;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {	/* アクティブタブ */
+
+}

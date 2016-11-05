@@ -1,0 +1,468 @@
+@charset "utf-8";
+
+
+
+/* 全体設定
+----------------------------- */
+html {
+	height: 100%;	/* footer下寄せ */
+}
+body {
+	font-family: 'Meiryo', sans-serif;	/* フォント指定 メイリオ優先 */
+	overflow-y: scroll;	/* 常に縦スクロールバー出してメニューガタつき解消 */
+
+	min-height: 100%;	/* footer下寄せ */
+	display: flex;	/* footer下寄せ */
+	flex-direction: column;	/* footer下寄せ */
+
+	background: url("../img/base/bg.jpg") fixed top center;
+	background-size: cover;
+}
+
+
+
+/* webfont
+----------------------------- */
+h1,h2,h3,h4,h5,h6 {	/* bootstrapフォント再指定 游ゴシック使う場合はweight再設定必要 */
+	font-family: 'Meiryo', sans-serif;
+}
+.mobilemenubtn p {	/* モバイルメニューボタンの文字 各デバイスで文字サイズ合わせるためにwebfont必須 */
+	font-family: 'Denk One', sans-serif;
+}
+
+header, header .dropdown li, footer {
+	font-family: 'Wallpoet', 'Meiryo', sans-serif;
+}
+h2 {
+	font-family: 'IM Fell English SC', serif;
+}
+
+
+
+/* ヘッダーアニメーション Headroom.js
+----------------------------- */
+.headroom {position: fixed;top: 0;left: 0;right: 0;transition: all .2s ease-in-out;}
+.headroom--unpinned {top: -12%;}	/* 隠す要素の高さに合わせて要調整 */
+.headroom--pinned {top: 0;}
+
+@media (max-width: 960px) {	/* モバイル時は専用メニューあるから無効化 */
+	.headroom {position: relative;top: auto;left: auto;right: auto;transition: none;}
+	.headroom--unpinned {top: auto;}
+	.headroom--pinned {top: auto;}
+}
+
+
+
+/* bootstrap修正
+----------------------------- */
+
+
+/* モバイル時.rowの横マージン解除
+----------------------------- */
+@media (max-width: 767px) {
+	.container > .row > [class*='col-'] {
+	    padding-right:0;
+	    padding-left:0;
+	}
+}
+
+
+@media (max-width: 768px) {
+	.navbar-fixed-top, .navbar-fixed-bottom {
+		position: static;	/* モバイル時にメニュー固定解除 */
+	}
+	body {
+		padding-top: 0;
+	}
+	.row:first-child {	/* モバイル用メニュー内のタイトルロゴ位置 */
+		margin-top: 5px;
+	}
+}
+
+
+.navbar {
+	margin-bottom: 0;	/* 下マージン解除 */
+
+}
+
+.navbar-fixed-top, .navbar-fixed-bottom {
+	position: static;	/* スクロール固定 */
+}
+
+.navbar-default {	/* メインメニュー背景 */
+	background-color: transparent;
+	border-color: transparent;
+	background-image: none;
+	box-shadow: none;
+}
+.navbar-fixed-top {	/* メインメニュー ボタンの下 謎のborder幅消し */
+	border-width: 0 0 0px;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {	/* メインメニュー アクティブボタン */
+	background: transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #fff;
+	text-shadow: 2px 2px 10px #111;
+}
+
+
+.navbar-nav {	/* メインメニュー ボタンリスト範囲 */
+	margin-top: .5em;
+
+}
+@media (min-width: 960px) {
+	.navbar-nav {	/* PC解像度のみ整列 */
+		display: flex;
+		justify-content: space-between;
+	}
+}
+@media (min-width: 1200px) {	/* 解像度でメニュー上マージン調整 */
+	.navbar-nav {margin-top: 1em;}
+}
+
+.navbar-nav li {	/* メインメニューの各ボタン */
+	padding: 0;
+
+	text-align: center;
+	font-size: 2rem;
+}
+@media (max-width: 992px) {	/* この解像度間はメニューに入りきってないので文字サイズ調整 */
+	.navbar-nav li {
+		font-size: 1.3rem;
+	}
+}
+@media (max-width: 768px) {	/* モバイル時のメニューボタン範囲拡大 */
+	.navbar-nav li {
+		font-size: 1.8rem;
+		padding: .3em;
+	}
+}
+.navbar-nav li img {	/* メインメニューの画像ボタンセンタリング */
+	margin: auto;
+	text-align: center;
+}
+
+
+.navbar .nav > li > a {	/* メインメニューの各ボタン */
+	padding: 0;
+	line-height: 1;
+
+	color: #000;
+	text-shadow: 0 0 15px rgba(250, 0, 0, 0.9);
+
+	-moz-transition: all .3s ease-out;
+	-webkit-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+}
+.navbar .nav > li {	/* メインメニューの各ボタン 非リンク文字 */
+	color: #666;
+		text-shadow: none;
+	line-height: 1;
+	margin-left: .5em;
+}
+@media (max-width: 960px) {	/* モバイル時のメニューボタン範囲拡大 */
+	.navbar .nav > li {
+		padding: .5em;
+	}
+}
+
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {	/* メインメニューのhover時カラーここ */
+	background-color: transparent;
+
+	color: #fff;
+	text-shadow: 2px 2px 10px #111;
+
+	transform: translateY(-1px);
+}
+
+.navbar-collapse {	/* モバイル時メインメニューの高さ固定しない */
+	max-height: none;
+}
+
+
+
+
+
+
+/* モバイル用サイドメニュー
+----------------------------- */
+.offcanvas-toggle {
+	background: -webkit-repeating-linear-gradient(top,rgba(255, 255, 255, 0.9) 0%,rgb(255, 255, 255) 30%,rgb(255, 255, 255) 70%,rgba(255, 255, 255, 0.9) 100%);
+	background: repeating-linear-gradient(to bottom,rgba(255, 255, 255, 0.9) 0%,rgb(255, 255, 255) 30%,rgb(255, 255, 255) 70%,rgba(255, 255, 255, 0.9) 100%);
+	background: -ms-repeating-linear-gradient(top,rgba(255, 255, 255, 0.9) 0%,rgb(255, 255, 255) 30%,rgb(255, 255, 255) 70%,rgba(255, 255, 255, 0.9) 100%);
+}	/* トグルの背景のカラー */
+.offcanvas-toggle-bars-color { background-color: #000; }	/* トグルのアイコンバーのカラー */
+
+@media (max-width: 767px) {
+	.navbar-default {	/* メインメニュー背景 */
+		background-color: #eee;	/* モバイル用メニューの背景色 */
+		border-color: transparent;
+		background-image: none;
+		box-shadow: none;
+
+	}
+}
+
+/* モバイル用サイドメニュー ボタン
+----------------------------- */
+.navbar-toggle {	/* bootstrap修正 */
+	border-radius: 0;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.mobilemenubtn {
+	position: fixed;
+	z-index: 100;
+	margin: 0;
+	bottom: 0;	/* ボタン下寄せ */
+	box-shadow: 0 0 25px rgba(0,0,0,0.2);
+	border-top: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.mobilemenubtn p {	/* MENU文字 */
+	font-size: 1rem;
+	line-height: 1;
+	margin-top: .5em;
+}
+.mobilemenubtn button {	/* ボタンタッチ範囲 */
+	margin: 0;
+	padding: .8em 1em 0;
+}
+.mobilemenubtn button span {	/* ボタンの横線 */
+	margin-left: .2em;
+}
+
+
+.mtitle {	/* モバイル時のページ先頭タイトル */
+	margin: 0 auto 2em;
+}
+
+
+
+
+
+/* メインメニュー設定
+----------------------------- */
+header {
+	text-transform: uppercase;	/* ぜんぶ大文字にする */
+
+	position: relative;
+	z-index: 20;
+
+	text-shadow: none;
+
+
+	background: -webkit-linear-gradient(top, #571427 0%, #c01 88%);
+	background: -moz-linear-gradient(top, #571427 0%, #c01 88%);
+	background: -ms-linear-gradient(top, #571427 0%, #c01 88%);
+	background: linear-gradient(to bottom, #571427 0%, #c01 88%);
+
+
+	border-bottom: 1px solid transparent;
+	box-shadow: 0 0 50px #FF0000;
+	max-height: 70px;
+}
+.menu_ruby {
+	font-size: 1rem;
+	letter-spacing: .2em;
+	line-height: 1.2;
+	display: block;
+	font-weight: bold;
+}
+
+.menu_title_m {	/* モバイル用メニュータイトル */
+	font-size: 3rem;
+	margin: 0em 0.25em 0;
+	color: #555;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: .7em;
+	padding-bottom: .2em;
+}
+
+#title_logo {
+	margin: auto;	/* モバイル時センタリング */
+	margin-top: 0;
+/*	margin-bottom: -80px;	*/
+	position: relative;
+	z-index: 21;
+}
+@media (max-width: 990px) {
+	#title_logo {
+		margin-top: 0;
+		margin-bottom: 0;
+		display: inline-block;
+	}
+}
+
+
+/* モバイル用メニュー読めねぇので色変え
+----------------------------- */
+@media (max-width: 767px) {
+	.navbar .nav > li {	/* メインメニューの各ボタン 非リンク文字 */
+		color: #ccc;
+	}
+	.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {	/* メインメニュー アクティブボタン */
+		color: #CC0000;
+		text-shadow: 2px 2px 10px #CC0000;
+	}
+	.navbar .nav > li > a:focus,
+	.navbar .nav > li > a:hover {	/* メインメニューのhover時カラーここ */
+		color: #CC0000;
+		text-shadow: 2px 2px 10px #CC0000;
+	}
+	.navbar .nav > li > a {	/* メインメニューの各ボタン */
+		color: #000;
+		text-shadow: none;
+
+	}
+}
+
+
+
+
+
+
+
+
+/* SNSボタン
+----------------------------- */
+.jssocials-share-link {
+	font-size: 1.4rem;
+	border: none;
+	color: #333;
+}
+.share {
+	text-align: center;
+}
+@media (max-width: 800px) {
+	.jssocials-share-link {
+		font-size: 1.6rem;
+	}
+}
+
+.jssocials-share-link:hover, .jssocials-share-link:focus, .jssocials-share-link:active {
+	border: none;
+  color: #fff;
+}
+
+
+
+/* footer下寄せ(footerの高さ指定必要なし)
+----------------------------- */
+.footerWrap {
+	flex: 1;	/* bodyに diplay: flex; と flex-direction: column; つけてる */
+}
+
+/* 最下部ロゴとコピーライト
+----------------------------- */
+footer {
+	text-align: center;
+}
+small {	/* コピーライトテキスト */
+	font-size: 1.2rem;
+	letter-spacing: .1em;
+	color: #999;
+	text-shadow: 0 0 10px #FF0000;
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 汎用ボックス
+----------------------------- */
+.box {
+	padding: 1em;
+  box-shadow: 0 0 30px rgba(0,0,0,0.9);
+	color: #333;
+	border-radius: 3px;
+	background: url("../img/base/bg-box.jpg");
+	background-size: cover;
+
+	/* SVG背景 http://www.svgeneration.com/recipes/Gridiron/ */
+	background-color: #f2f2f2;
+	background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnPgoJPGRlZnM+CgkJPHBhdHRlcm4gcGF0dGVyblVuaXRzPSd1c2VyU3BhY2VPblVzZScgaWQ9J2MnIHdpZHRoPSc0OCcgaGVpZ2h0PSczMicgeD0nMCcgeT0nMCcgdmlld0JveD0nMCAwIDMwIDIwJz4KCQkJPHBhdGggZD0nTTAsMTBoNWw1LC0xMGgxMGw1LDEwaDVtLTUsMGwtNSwxMGgtMTBsLTUsLTEwJyBzdHJva2U9JyNiMDdkOGQnIHN0cm9rZS13aWR0aD0nMC4xJyBmaWxsLW9wYWNpdHk9JzAnIC8+CgkJPC9wYXR0ZXJuPgoJCTxyYWRpYWxHcmFkaWVudCBpZD0nZycgZ3JhZGllbnRVbml0cz0ndXNlclNwYWNlT25Vc2UnIGN4PSc1MCUnIGN5PSc1MCUnIHI9JzYwJScgZng9JzI2JScgZnk9JzMyJSc+CgkJCTxzdG9wIG9mZnNldD0nMCUnIHN0b3Atb3BhY2l0eT0nMCcgc3RvcC1jb2xvcj0nI2YyZjJmMicgLz4KCQkJPHN0b3Agb2Zmc2V0PScxMDAlJyBzdG9wLW9wYWNpdHk9Jy45JyBzdG9wLWNvbG9yPScjYmZiNWI1JyAvPgoJCTwvcmFkaWFsR3JhZGllbnQ+Cgk8L2RlZnM+Cgk8cmVjdCB3aWR0aD0nMTAwJScgaGVpZ2h0PScxMDAlJyBmaWxsPSd1cmwoI2MpJy8+Cgk8cmVjdCB3aWR0aD0nMTIwJScgeD0nLTEwJScgeT0nLTEwJScgaGVpZ2h0PScxMjAlJyBmaWxsPSd1cmwoI2cpJy8+Cjwvc3ZnPg==);
+
+
+
+
+	text-shadow: 0 0 10px rgba(0,0,0,0.5);
+	/* windows環境で無理やりテキストアンチエイリアス */
+	transform: rotate(0.028deg);
+	-ms-transform: rotate(0.028deg);
+	-moz-transform: rotate(0.028deg);
+	-webkit-transform: rotate(0.028deg);
+}
+@media (max-width: 767px) {
+	.box {
+		padding: 1em .5em;
+	}
+}
+.box img {	/* 画像にはアンチエイリアスの回転かけない */
+	transform: rotate(-0.028deg);
+	-ms-transform: rotate(-0.028deg);
+	-moz-transform: rotate(-0.028deg);
+	-webkit-transform: rotate(-0.028deg);
+}
+
+
+h2 {
+	line-height: .7;
+	margin-bottom: 1em;
+
+
+	text-align: center;
+	margin: -.5em -.5em 1em;
+	padding: .7em 2em .5em;
+	color: #330000;
+
+	border-bottom: 1px dotted #990000;
+
+}
+h2:first-letter {
+	color: #990000;
+	font-size: 5rem;
+}
+@media (max-width: 767px) {
+	h2 {
+		margin: -.5em -.25em 1em;
+	}
+}
+
+
+.title_ruby {
+	font-size: 1.3rem;
+	letter-spacing: 1em;
+	padding-left: .5em;
+}
+
+
+
+
+
+
+
+
+/* 18歳以上確認ウィンド
+----------------------------- */
+.check18 a:link, .check18 a:visited {	/* 年齢確認ウィンドのリンクカラー */
+	color: #444;
+}
+.check18 {
+	display: none;	/* クッキー認証通ったら消す */
+}
