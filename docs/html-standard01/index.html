@@ -61,10 +61,12 @@
 <script src="https://cdn.jsdelivr.net/jquery.migrate/1.4.1/jquery-migrate.min.js" charset="utf-8"></script>	<!-- jQueryバージョン差補完 -->
 <script src="https://cdn.jsdelivr.net/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>	<!-- bootstrapスクリプト -->
 <script src="https://cdn.jsdelivr.net/highlight.js/9.6.0/highlight.min.js" charset="utf-8"></script>	<!-- コードのシンタックスハイライト -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/1.1.0/highlightjs-line-numbers.min.js" charset="utf-8"></script>	<!-- コードのシンタックスハイライトに行番号つける -->
 
 <script>
 	hljs.configure({ tabReplace: "  " });	//	シンタックス行のタブ幅をスペースふたつに修正
 	hljs.initHighlightingOnLoad();	//	コードのシンタックスハイライト 実行
+  hljs.initLineNumbersOnLoad();	//	コードのシンタックスハイライトに行番号 実行
 </script>
 
 </body>
