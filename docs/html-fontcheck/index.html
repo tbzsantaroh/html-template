@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">	<!-- IE互換モード拒否 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">	<!-- bootstrap向け モバイル用表示サイズ調整 -->
+	<title>Windows10とAndroidの明朝体フォント確認用ページ</title>
+	<link href="https://cdn.jsdelivr.net/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">	<!-- フレームワーク bootstrap -->
+	<link href="https://cdn.jsdelivr.net/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">	<!-- bootstrapテーマ -->
+	<link href="https://cdn.jsdelivr.net/highlight.js/9.6.0/styles/agate.min.css" rel="stylesheet">	<!-- コードのシンタックスハイライト -->
+
+  <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">	<!-- google font日本語アーリーアクセス https://googlefonts.github.io/japanese/ -->
+  <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
+
+
+
+	<link href="css/base.css" rel="stylesheet">
+</head>
+<body>
+
+<article class="container"><div class="row">	<!-- レスポンシブ用コンテナの枠 -->
+
+
+<header class="jumbotron">	<!-- タイトル -->
+	<h1>Windows10とAndroidの明朝体フォント確認用ページ</h1>
+  <p>3rem以上のｸｿﾃﾞｶフォントサイズなら指定なし・游明朝でもOK<br />
+    文章に使うならフォントサイズがデカすぎるからサブセット化推奨<br />
+    <a href="//googlefonts.github.io/japanese/" target="_blank">Google Fonts + 日本語
+    早期アクセス</a></p>
+</header>
+
+
+
+
+<section class="col-md-12">
+
+
+  <dl>
+    <dt class="serif">font-family: serif;</dt>
+    <dd class="serif">指定なし明朝。</dd>
+
+    <dt class="yumin">font-family: "Yu Mincho";</dt>
+    <dd class="yumin">windows8以上向け 游明朝。</dd>
+
+    <dt class="wf-hannari">font-family: "Hannari";</dt>
+    <dd class="wf-hannari">GoogleFont はんなり明朝。</dd>
+
+    <dt class="wf-sawarabimincho">font-family: "Sawarabi Mincho";</dt>
+    <dd class="wf-sawarabimincho">GoogleFont さわらび明朝。漢字もあり。</dd>
+  </dl>
+
+  <ul>
+    <li>バニラAndroidは明朝フォント入ってない = webフォント使わないとゴシックになる = 現状、明朝体使いたかったらwebフォント必須</li>
+    <li>はんなり明朝ｸｯｿ綺麗だけど漢字がない。</li>
+    <li>さわらび明朝は漢字もあるけど、日本語フルセットフォントなので当然のようにファイルサイズがクソデカい。</li>
+    <li>Windows10環境下での游明朝はレンダリングの問題でぼやける。Edgeなら別だがそんなブラウザ誰も使ってない。</li>
+    <li>Windows10環境下での游明朝レンダリングぼけも、3rem以上のクソデカフォントサイズだと気にならない。</li>
+  </ul>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+</div></article>	<!-- .row --><!-- .container -->
+
+<footer><p>このウェブページは<a href="//github.com/tbzsantaroh/html-template">github.com/tbzsantaroh/html-template</a>のサンプルの一部です</p></footer>
+
+
+<!-- javascript読み込み -->
+<script src="https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>	<!-- jquery -->
+<script src="https://cdn.jsdelivr.net/jquery.migrate/1.4.1/jquery-migrate.min.js" charset="utf-8"></script>	<!-- jQueryバージョン差補完 -->
+<script src="https://cdn.jsdelivr.net/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>	<!-- bootstrapスクリプト -->
+<script src="https://cdn.jsdelivr.net/highlight.js/9.6.0/highlight.min.js" charset="utf-8"></script>	<!-- コードのシンタックスハイライト -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/1.1.0/highlightjs-line-numbers.min.js" charset="utf-8"></script>	<!-- コードのシンタックスハイライトに行番号つける -->
+
+<script>
+	hljs.configure({ tabReplace: "  " });	//	シンタックス行のタブ幅をスペースふたつに修正
+	hljs.initHighlightingOnLoad();	//	コードのシンタックスハイライト 実行
+  hljs.initLineNumbersOnLoad();	//	コードのシンタックスハイライトに行番号 実行
+</script>
+
+</body>
+</html>

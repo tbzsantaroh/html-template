@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+
+
+/* 全体設定
+----------------------------- */
+body {
+	font-family: 'Meiryo', sans-serif;	/* フォント指定 メイリオ */
+
+	display: flex;	/* footer下貼り付け用 */
+	min-height: 100vh;	/* footer下貼り付け用 */
+	flex-direction: column;	/* footer下貼り付け用 */
+
+	background: #ececeb;
+}
+article {
+	flex: 1;	/* footer下貼り付け用 */
+}
+
+footer {
+	border-top: 1px solid #999;
+	text-align: center;
+	margin: 5em 10% 0;
+	padding: 1em 0;
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+
+
+dl {
+	font-size: 1.5rem;
+	text-align: center;
+	padding: 0 10%;
+}
+dt:first-letter, dd:first-letter {
+	font-size: 5rem;
+}
+dd {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: .5em;
+}
+dd:last-child {
+	border: none;
+}
+
+
+
+
+.serif {
+	font-family: serif, sans-serif;
+}
+.yumin {
+	font-family: "Yu Mincho", sans-serif;
+}
+
+
+.wf-hannari { font-family: "Hannari", sans-serif; }
+.wf-sawarabimincho { font-family: "Sawarabi Mincho", sans-serif; }
