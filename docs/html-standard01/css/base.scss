@@ -1,0 +1,33 @@
+@charset 'utf-8';
+@import 'import/variable';
+
+
+
+/* 全体設定
+----------------------------- */
+body {
+  $bg-color: #ececeb;
+
+  background: $bg-color;
+  display: flex;	/* footer下貼り付け用 */
+  flex-direction: column;	/* footer下貼り付け用 */
+  font-family: 'Meiryo', sans-serif;	/* フォント指定 メイリオ */
+  min-height: 100vh;	/* footer下貼り付け用 */
+}
+
+article {
+  flex: 1;	/* footer下貼り付け用 */
+}
+
+footer {
+  $border-color: #999;
+
+  border-top: 1px solid $border-color;
+  font: {
+    size: 1.2rem;
+    weight: bold;
+  }
+  margin: 5em 10% 0;
+  padding: 1em 0;
+  text-align: center;
+}

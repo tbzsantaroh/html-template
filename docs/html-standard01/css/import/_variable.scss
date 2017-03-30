@@ -1,0 +1,36 @@
+@charset 'utf-8';
+
+// 共通設定とプリセット用ファイル
+
+
+
+// mediaqueryのmixin
+// http://www.tam-tam.co.jp/tipsnote/html_css/post10708.html
+
+// bootstrapのGridサイズに合わせる
+// http://getbootstrap.com/css/#grid-options
+
+
+$breakpoints-min: (
+  'sm': '(min-width: 768px)',
+  'md': '(min-width: 992px)',
+  'lg': '(min-width: 1200px)',
+) !default;
+
+$breakpoints-max: (
+  'sm': '(max-width: 768px)',
+  'md': '(max-width: 992px)',
+  'lg': '(max-width: 1200px)',
+) !default;
+
+@mixin mediaqueries-min($breakpoint: md) {
+  @media #{map-get($breakpoints-min, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mediaqueries-max($breakpoint: md) {
+  @media #{map-get($breakpoints-max, $breakpoint)} {
+    @content;
+  }
+}

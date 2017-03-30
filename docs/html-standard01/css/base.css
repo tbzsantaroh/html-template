@@ -1,27 +1,28 @@
-@charset "utf-8";
-
-
-
+@charset "UTF-8";
 /* 全体設定
 ----------------------------- */
 body {
-	font-family: 'Meiryo', sans-serif;	/* フォント指定 メイリオ */
-
-	display: flex;	/* footer下貼り付け用 */
-	min-height: 100vh;	/* footer下貼り付け用 */
-	flex-direction: column;	/* footer下貼り付け用 */
-
-	background: #ececeb;
+  background: #ececeb;
+  display: flex;
+  /* footer下貼り付け用 */
+  flex-direction: column;
+  /* footer下貼り付け用 */
+  font-family: 'Meiryo', sans-serif;
+  /* フォント指定 メイリオ */
+  min-height: 100vh;
+  /* footer下貼り付け用 */
 }
+
 article {
-	flex: 1;	/* footer下貼り付け用 */
+  flex: 1;
+  /* footer下貼り付け用 */
 }
 
 footer {
-	border-top: 1px solid #999;
-	text-align: center;
-	margin: 5em 10% 0;
-	padding: 1em 0;
-	font-size: 1.2rem;
-	font-weight: bold;
+  border-top: 1px solid #999;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 5em 10% 0;
+  padding: 1em 0;
+  text-align: center;
 }
