@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html amp lang="ja">  <!-- AMP用必須要素 -->
-<head>
+<head prefix="og: http://ogp.me/ns#  website: http://ogp.me/ns/website#">	<!-- indexページのみarticleをwebsiteに変更 -->
   <meta charset="utf-8">  <!-- AMP用必須要素 headの最初に入れる -->
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">  <!-- AMP用必須要素 -->
+
+  <meta name="description" content="AMPのテストページ description">	<!-- サイト説明 -->
+  <meta name="author" content="tbzsantaroh">	<!-- 著作、作者 -->
+
+  <meta property="og:title" content="AMPページテスト og title">	<!-- SNS向けタグ ページタイトル -->
+  <meta property="og:type" content="website">	<!-- SNS向けタグ indexページのみarticleをwebsiteに変更 -->
+  <meta property="og:description" content="AMPのテストページ og description">	<!-- SNS向けタグ サイト説明 -->
+  <meta property="og:url" content="https://tbzsantaroh.github.io/html-template/html-ampsample01/ampsample.html">	<!-- SNS向けタグ サイトのURL -->
+  <meta property="og:site_name" content="AMPページテスト">	<!-- SNS向けタグ サイトの名前 -->
+  <meta property="og:image" content="https://tbzsantaroh.github.io/html-template/html-ampsample01/img/ogp/ogp-icon.jpg">	<!-- SNS向けタグ サイトのサムネイル -->
 
   <meta name="twitter:card" content="summary_large_image">  <!-- twitter cardの種類 クソデカカード -->
   <meta name="twitter:site" content="@tbzsantaroh">	<!-- リンク付するtwitterのurl -->
   <meta name="twitter:creator" content="@tbzsantaroh">	<!-- 著作、作者 -->
   <meta name="twitter:url" content="https://tbzsantaroh.github.io/html-template/html-ampsample01/ampsample.html">	<!-- SNS向けタグ サイトのURL -->
-  <meta name="twitter:title" content="AMPページテスト">	<!-- SNS向けタグ ページタイトル -->
-  <meta name="twitter:text:description" content="AMPのテストページ">	<!-- SNS向けタグ サイト説明 -->
+  <meta name="twitter:title" content="AMPページテスト twitter title">	<!-- SNS向けタグ ページタイトル -->
+  <meta name="twitter:text:description" content="AMPのテストページ twitter text description">	<!-- SNS向けタグ サイト説明 -->
   <meta name="twitter:image" content="https://tbzsantaroh.github.io/html-template/html-ampsample01/img/ogp/ogp-icon.jpg">	<!-- SNS向けタグ サイトのサムネイル -->
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">	<!-- IE互換モード拒否 -->
 
   <link rel="canonical" href="https://tbzsantaroh.github.io/html-template/html-ampsample01/ampsample.html">  <!-- AMP用必須要素 元のhtmlページ指定 なければ自amp html指定 -->
 
